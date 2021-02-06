@@ -1,2 +1,4 @@
 <h1>Editing <%= @song.title %></h1>
-<%= render partial: "form" %>
+<%= form_for @song  do |f| %>
+<%= render partial: "form", locals: {f: f, song: @song} %>
+<% end %>
