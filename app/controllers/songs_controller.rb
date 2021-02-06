@@ -48,12 +48,12 @@ class SongsController < ApplicationController
     if @song
       if params[:artist_id]
         if artist && @song.artist != artist
-          redirect_to artist_songs_path(artist)
-        elsif params[:artist_id] && !artist
+          redirect_to artist_songs_path(artist), alert: "That song does not belong to that artist."
+        elsif !artist
           redirect_to artists_path, alert: "Artist not found."
         end
       end
-    elsif !@song && artist
+    elsif artist
       redirect_to artist_songs_path(artist), alert: "Song not found."
     else
       redirect_to songs_path, alert: "Song not found."
