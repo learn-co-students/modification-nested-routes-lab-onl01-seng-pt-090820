@@ -43,3 +43,7 @@ jspm_packages
 /log/*
 !/log/.keep
 /tmp
+
+/config/master.key
+
+/config/credentials/production.key
